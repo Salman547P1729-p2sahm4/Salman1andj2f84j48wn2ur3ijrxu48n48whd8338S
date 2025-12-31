@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Love Lyrics</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+body{
+  background:black;
+  color:red;
+  overflow:hidden;
+}
+img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.screen{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity 1s ease, transform 1s ease;
+  pointer-events:none;
+}
+.screen.active{
+  opacity:1;
+  transform:translateY(0);
+  pointer-events:auto;
+}
+.heart{
+  width:180px;
+  height:180px;
+  animation:pulse 1.5s infinite;
+  cursor:pointer;
+}
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.15);}
+  100%{transform:scale(1);}
+}
+.text{
+  font-size:28px;
+  margin-top:20px;
+  position:absolute;
+  top:30px;
+  text-align:center;
+}
+.lyrics{
+  font-size:22px;
+  line-height:1.6;
+  text-align:center;
+  padding:20px;
+  max-width:90%;
+}
+.image-box{
+  width:320px;
+  height:420px;
+  background:#fff;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 30px 60px rgba(0,0,0,.35);
+}
+.image-small{
+  width:280px;
+  height:380px;
+  background:#fff;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 30px 60px rgba(0,0,0,.35);
+}
+.final-text{
+  font-size:26px;
+  text-align:center;
+  line-height:1.5;
+  max-width:90%;
+}
+</style>
+</head>
+
+<body>
+
+<audio id="music" preload="auto" playsinline>
+  <source src="red.mp3" type="audio/mpeg">
+</audio>
+
+<div class="screen active" id="s1">
+  <img src="heart.gif" class="heart" onclick="_0x7a3f(event)">
+  <div class="text">Hey My Sweetheart ❤️<br>Tap on me🧸</div>
+</div>
+
+<div class="screen" id="s2">
+  <div class="image-box"><img src="img2.png"></div>
+  <div class="text">This is for you 💖</div>
+</div>
+
+<div class="screen" id="s3">
+  <div class="lyrics">
+    Your love is the rhythm<br>
+    That beats in my heart<br>
+    Every moment with you<br>
+    Is my favorite part 💕
+  </div>
+</div>
+
+<div class="screen" id="s4">
+  <div class="final-text">
+    Forever Yours 💞<br><br>
+    Cutie let’s celebrate the🤗<br>
+    new year 💝 and <br>
+    welcome our future 💖<br>
+    where we are together👥<br>
+  </div>
+</div>
+
+<div class="screen" id="s5">
+  <div class="image-small"><img src="img6.png"></div>
+</div>
+
+<script>
+(function(){
+  var _0x2c91=['.screen','active','music','play','currentTime','volume','add','remove','length'];
+  var _0x9d2=function(i){return _0x2c91[i];};
+
+  var _s=document.querySelectorAll(_0x9d2(0));
+  var _m=document.getElementById(_0x9d2(2));
+  var _i=0,_f=false;
+
+  window._0x7a3f=function(e){
+    e.stopPropagation();
+    if(!_f){
+      _m[_0x9d2(4)]=0;
+      _m[_0x9d2(5)]=1;
+      _m[_0x9d2(3)]();
+      _f=true;
+    }
+    _n();
+  };
+
+  function _n(){
+    _s[_i].classList[_0x9d2(7)](_0x9d2(1));
+    _i++;
+    if(_i<_s[_0x9d2(8)]){
+      _s[_i].classList[_0x9d2(6)](_0x9d2(1));
+    }
+  }
+
+  document.body.addEventListener('click',function(){
+    if(_i>0&&_i<_s[_0x9d2(8)]-1){_n();}
+  });
+})();
+</script>
+
+</body>
+</html>
